@@ -7,7 +7,7 @@ import {
   View,
 } from 'react-native';
 import {validateEmail} from '../utils/validations';
-import firebase from '../utils/firebase';
+import {firebase} from '../utils/firebase';
 import {getAuth, createUserWithEmailAndPassword} from 'firebase/auth';
 
 export default function RegisterForm(props) {

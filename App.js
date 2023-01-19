@@ -1,15 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import {
-  StyleSheet,
-  SafeAreaView,
-  Text,
-  StatusBar,
-  View,
-  Button,
-} from 'react-native';
+import {StyleSheet, SafeAreaView, StatusBar} from 'react-native';
 import Auth from './src/components/Auth';
-
-import firebase from './src/utils/firebase';
+import ListBirthday from './src/components/ListBirthday';
+import {firebase} from './src/utils/firebase';
 import {getAuth} from 'firebase/auth';
 
 export default function App() {
@@ -27,22 +20,9 @@ export default function App() {
     <>
       <StatusBar barStyle={'light-content'} />
       <SafeAreaView style={styles.backgroud}>
-        {user ? <Logout /> : <Auth />}
+        {user ? <ListBirthday user={user} /> : <Auth />}
       </SafeAreaView>
     </>
-  );
-}
-
-function Logout() {
-  const logout = () => {
-    getAuth(firebase).signOut();
-  };
-
-  return (
-    <View>
-      <Text>Estas logeado</Text>
-      <Button title="Cerrar sesión" onPress={logout} />
-    </View>
   );
 }
 

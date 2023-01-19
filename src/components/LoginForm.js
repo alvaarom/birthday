@@ -7,7 +7,7 @@ import {
   TextInput,
 } from 'react-native';
 import {validateEmail} from '../utils/validations';
-import firebase from '../utils/firebase';
+import {firebase} from '../utils/firebase';
 import {getAuth, signInWithEmailAndPassword} from 'firebase/auth';
 
 export default function LoginForm(props) {
